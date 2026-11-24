@@ -1,0 +1,23 @@
+{
+  "run": {
+    "settings": {
+      "seed": 1182024,
+      "n_rep": 500,
+      "n_particles": 2048,
+      "min_ess": 200,
+      "max_particles": 65536
+    },
+    "inputs": {
+      "study.py": "bc32970ede36bcd9245446e38eb9106d14740d894ca2ec55fcacaa387c803972",
+      "models.py": "cf2b16b45f1a96b4a21c27b3068605170ba5d9bb4980cf99ac7f428f11880656",
+      "analysis.py": "25ac5d5f75131cc27cd90bd602aa360ba22413dbbb7a462371c92e5dbcfe89d4",
+      "trials.csv.gz": "56095a8b9c8fbfb474be7824400e02f8fd90d7a7936c6aad10f1ed0c60ad0bb5",
+      "predictive.py": "95e5b399ba201801736146e986dbd1ff7edbccead17d43f9c0e836a074788755",
+      "human_fits.csv": "6f3f20b71fbd5fe4c32bf923f1142a46a002cbca4598bc5c1fae51f03eb56e49"
+    }
+  },
+  "outputs": {
+    "predictive_cells.csv": "b13ddba17665171c56874d06d933572d00b4e4e124cd015e32e7e50f2c05f6a7",
+    "posterior_diagnostics.csv": "0e16634621826a7b7a6a6cc9386f192d1fecf1055b168aac22215b47b1980fec"
+  }
+}

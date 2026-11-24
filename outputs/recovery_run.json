@@ -1,0 +1,18 @@
+{
+  "run": {
+    "settings": {
+      "seed": 1182023,
+      "n_agents": 100,
+      "n_trials": 250,
+      "starts": 10
+    },
+    "inputs": {
+      "study.py": "bc32970ede36bcd9245446e38eb9106d14740d894ca2ec55fcacaa387c803972",
+      "models.py": "cf2b16b45f1a96b4a21c27b3068605170ba5d9bb4980cf99ac7f428f11880656",
+      "analysis.py": "25ac5d5f75131cc27cd90bd602aa360ba22413dbbb7a462371c92e5dbcfe89d4"
+    }
+  },
+  "outputs": {
+    "recovery_fits.csv": "1d60f7a62fa63c7f1571effcdc0deddca059b2c3e507772515c77b4da1db7443"
+  }
+}

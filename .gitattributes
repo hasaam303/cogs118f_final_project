@@ -1,0 +1,5 @@
+# The replication cache verifies byte digests on every platform.
+replication/*.py text eol=lf
+outputs/*.csv text eol=lf
+outputs/*.json text eol=lf
+two_stage_replication.ipynb text eol=lf

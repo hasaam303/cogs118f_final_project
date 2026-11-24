@@ -1,0 +1,17 @@
+{
+  "run": {
+    "settings": {
+      "seed": 1182021,
+      "starts": 10
+    },
+    "inputs": {
+      "study.py": "bc32970ede36bcd9245446e38eb9106d14740d894ca2ec55fcacaa387c803972",
+      "models.py": "cf2b16b45f1a96b4a21c27b3068605170ba5d9bb4980cf99ac7f428f11880656",
+      "analysis.py": "25ac5d5f75131cc27cd90bd602aa360ba22413dbbb7a462371c92e5dbcfe89d4",
+      "trials.csv.gz": "56095a8b9c8fbfb474be7824400e02f8fd90d7a7936c6aad10f1ed0c60ad0bb5"
+    }
+  },
+  "outputs": {
+    "human_fits.csv": "6f3f20b71fbd5fe4c32bf923f1142a46a002cbca4598bc5c1fae51f03eb56e49"
+  }
+}
