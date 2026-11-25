@@ -6,6 +6,8 @@ The three simulated planning agents received median fitted hybrid weights of **0
 
 Summed participant BIC favors the simple model-based family in all three cohorts. AIC favors TDLR for common instructions and the hybrid for both story tasks. In 500 replicated datasets per cohort, all 12 observed stay rates fall outside the BIC winners’ pointwise 95% posterior predictive intervals. The largest discrepancy is in Spaceship after an unrewarded common transition, where participants repeat 42.0% of choices and the model predicts 52.9%. [Model comparison](outputs/model_comparison.csv) · [Predictive check](outputs/posterior_predictive.png)
 
+Section 6 tests how often BIC identifies a hybrid learner as the task gets longer. For the same 100 learners with equal planning and model-free weights, BIC selected the hybrid **3, 16, 34, and 57 times** after 125, 250, 500, and 1,000 trials. With a true planning weight of 0.9, it selected the pure planner for **99 of 100** learners even at 1,000 trials. These are individual model-selection rates under the simulated parameter ranges. [Heatmaps with 95% intervals](outputs/hybrid_recovery_grid.png) · [Rates for all five candidate models](outputs/hybrid_recovery_rates.csv)
+
 ## Reproduce the analysis
 
 Use Python 3.11 and run the following from the project root in an activated environment.
@@ -18,6 +20,7 @@ Open the notebook in Jupyter or VS Code, select that Python environment, and run
 
 ```sh
 python -m replication.study all --refresh --jobs 6
+python -m replication.hybrid_recovery --refresh --jobs 6
 ```
 
 The [data guide](data/README.md) documents the two pinned upstream sources, inclusion rules, trial coding, and independent rebuild. The included trial table supports offline use. [Analysis code](replication/) · [Figures and fit tables](outputs/)

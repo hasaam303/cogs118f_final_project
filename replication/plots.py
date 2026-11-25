@@ -21,6 +21,34 @@ def set_style():
     })
 
 
+def hybrid_recovery_grid(rates):
+    """Show both competing decisions on the same percentage scale."""
+    fig, axes = plt.subplots(1, 2, figsize=(11, 5.9), sharey=True, layout="constrained")
+    for ax, model, title in zip(axes, ["Hybrid", "MB"],
+                                ["BIC selects the hybrid", "BIC selects the pure planner"]):
+        group = rates[rates.selected.eq(model)].set_index(["weight", "trials"])
+        weights = sorted(group.index.get_level_values("weight").unique())
+        lengths = sorted(group.index.get_level_values("trials").unique())
+        values = group.rate.unstack().loc[weights, lengths]
+        ax.imshow(values, cmap="Blues", vmin=0, vmax=1, aspect="auto")
+        ax.set(xticks=range(len(lengths)), xticklabels=lengths, xlabel="Trials observed",
+               yticks=range(len(weights)), yticklabels=[
+                   "0  (pure MF)" if w == 0 else "1  (pure MB)" if w == 1 else f"{w:g}"
+                   for w in weights], title=title)
+        for i, weight in enumerate(weights):
+            for j, length in enumerate(lengths):
+                row = group.loc[(weight, length)]
+                color = "white" if row.rate > .55 else INK
+                ax.text(j, i-.12, f"{row.rate:.0%}", ha="center", va="center",
+                        color=color, fontweight="bold")
+                ax.text(j, i+.17, f"{100*row.lower:.0f}–{100*row.upper:.0f}%",
+                        ha="center", va="center", color=color, fontsize=8)
+    axes[0].set_ylabel("True planning weight")
+    fig.supxlabel("Small type gives pointwise 95% Wilson intervals across simulated learners.",
+                  fontsize=9)
+    return fig
+
+
 def _stay_axes(ax, title):
     ax.set(xticks=[0, 1], xticklabels=["No reward", "Reward"], xlim=(-.23, 1.23),
            ylim=(0, 1), title=title)
